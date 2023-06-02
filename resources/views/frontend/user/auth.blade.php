@@ -29,7 +29,7 @@
                     <h3>User Login</h3>
                 </div>
                 <div class="card-body shadow">
-                      <form action="{{ url('/vendor/login') }}" method="post">
+                      <form action="{{ route('login') }}" method="post">
                         @csrf
                         <div class="form-group">
                             <label for="">Email</label>
@@ -51,10 +51,10 @@
                         @if(session()->has('success'))
                           <div class="alert alert-info">{{ session()->get('success') }}</div>
                         @endif
-                    <h3>Vendor Registration</h3>
+                    <h3>User Registration</h3>
                 </div>
                 <div class="card-body">
-                   <form action="{{ url('/vendor/registration') }}" method="post" enctype="multipart/form-data">
+                   <form action="{{ route('register') }}" method="post">
                     @csrf
                       <div class="form-group">
                           <label for="">User Name</label><br>

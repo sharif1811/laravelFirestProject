@@ -21,4 +21,13 @@ class Product extends Model
     public function vendor(){
         return $this->belongsTo(Vendor::class);
     }
+    public function cart(){
+        return $this->hasMany(Cart::class);
+    }
+    public function reviews(){
+        return $this->hasMany(Review::class)->with('user');
+    }
+    public function orders(){
+        return $this->hasMany(Order::class);
+    }
 }

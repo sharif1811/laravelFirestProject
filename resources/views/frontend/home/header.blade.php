@@ -17,14 +17,21 @@
 									<ul class="display-flex">
 
 										<li><a href="#">Check Out</a></li>
-										<li><a href="{{ url('/user/login') }}">User Login</a></li>
-										<li><a href="{{ url('/user/registration') }}">User Registration</a></li>
-										@if(session()->has('vendorId'))
-										<li><a href="{{ url('/vendor/dashboard') }}" class="badge badge-success">{{ session()->get('vendorName') }}</a></li>
-										<li><a href="{{ url('/vendor/logout') }}"class="badge badge-danger" onclick="return confirm('Are You Sure? You Want to log out ?')">Log Out</a></li>
+										@if(auth()->check())
+											<li><a href="#">{{ auth()->user()->name }}</a></li>
+											<li><a href="{{ url('/user/logout') }}" onclick="return confirm('are you sure')">User Logout</a></li>
 										@else
-										<li><a href="{{ url('/vendor/login') }}">Vendor Login</a></li>
-										<li><a href="{{ url('/vendor/registar') }}">Vendor Registar</a></li>
+											<li><a href="{{ url('/user/login') }}">User Login</a></li>
+											<li><a href="{{ url('/user/registration') }}">User Registration</a></li>
+										@endif
+										
+
+										@if(session()->has('vendorId'))
+											<li><a href="{{ url('/vendor/dashboard') }}" class="badge badge-success">{{ session()->get('vendorName') }}</a></li>
+											<li><a href="{{ url('/vendor/logout') }}"class="badge badge-danger" onclick="return confirm('Are You Sure? You Want to log out ?')">Log Out</a></li>
+										@else
+											<li><a href="{{ url('/vendor/registar') }}">Vendor Login</a></li>
+											<li><a href="{{ url('/vendor/registar') }}">Vendor Registar</a></li>
 										@endif
 
 									</ul>
@@ -64,8 +71,22 @@
 			   	<a href="#">Sitamet Tortorions</a>
 	  	      </div>
 	  	      <div class="slider-img">
-	  	      	<img src="images/slider-img.png" alt="" />
+	  	      	<img src="{{ asset('/frontend/assets/') }}/images/slider-img.png" alt="" />
 	  	      </div>
+			  <div class="cart-icon">
+				@if ($cartProducts>0)
+					<a href="{{ url('/checkout') }}">
+						<span class="text-white">(<sup class="text-danger" style="font-size:20px">{{ $cartProducts }}</sup>items)</span>
+						<img src="{{ asset('/frontend/assets/') }}/images/shopingCart.png" alt="" width=50 height=50>
+					</a>
+					@else
+					<span class="text-white">(<sup class="text-danger" style="font-size:20px">{{ $cartProducts }}</sup>items)</span>
+				    <img src="{{ asset('/frontend/assets/') }}/images/shopingCart.png" alt="" width=50 height=50>
+					<span class="text-white">Empty Cart</span>
+				@endif
+
+				
+			  </div>
 	  	     <div class="clear"></div>
 	      </div>
    		</div>

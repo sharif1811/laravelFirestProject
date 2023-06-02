@@ -16,4 +16,7 @@ class Vendor extends Model
     public function product(){
         return $this->hasMany(Product::class);
     }
+    public function order(){
+        return $this->hasMany(Order::class);
+    }
 }

@@ -2,29 +2,40 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Frontend\Frontendcontroller;
+use App\Http\Controllers\Frontend\UserController;
+use App\Http\Controllers\Frontend\VendorController;
+use App\Http\Controllers\Frontend\CartController;
 use App\Http\Controllers\Admin\Admincontroller;
 use App\Http\Controllers\Admin\CatagoryController;
 use App\Http\Controllers\Admin\SubcatagoryController;
 use App\Http\Controllers\Admin\BrandController;
-use App\Http\Controllers\Frontend\VendorController;
 use App\Http\Controllers\Admin\ColorController;
 use App\Http\Controllers\Admin\SizeController;
+use App\Http\Controllers\Admin\OrderController;
+
 
 /*
 |--------------------------------------------------------------------------
 | Web Routes
 |--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
+
 */
 //Frontend controller start
 Route::get('/',[Frontendcontroller::class,'index']);
+Route::post('/review/store',[Frontendcontroller::class,'reviewStore']);
+Route::get('/product/detailes/{id}',[Frontendcontroller::class,'productDetails']);
 Route::get('/user/login',[Frontendcontroller::class,'userLogin']);
 Route::get('/user/registration',[Frontendcontroller::class,'userRegister']);
+
 //Frontend controller end
+
+//Cart controller Start
+Route::post('/add/to/cart',[CartController::class,'addToCart']);
+Route::get('/checkout',[CartController::class,'checkOut']);
+Route::post('/cart/product/update/{id}',[CartController::class,'cartProductUpdate']);
+Route::get('/cart/product/delete/{id}',[CartController::class,'cartProductdelete']);
+Route::post('/order/detailes/for-order',[CartController::class,'orderComplate']);
+//Cart controller end
 
 //Vendor controller start
 Route::get('/vendor/registar',[VendorController::class,'vendorRegistar']);
@@ -37,6 +48,9 @@ Route::get('/vendor/edit/{id}',[VendorController::class,'vendorEdit']);
 Route::get('/vendor/pending/{id}',[VendorController::class,'vendorPending']);
 Route::get('/vendor/approve/{id}',[VendorController::class,'vendorApproved']);
 Route::get('/vendor/logout',[VendorController::class,'vendorLogout']);
+Route::get('/vendor/order',[VendorController::class,'vendorOrder']);
+Route::get('/vendor/pending/product',[VendorController::class,'vendorPendingProduct']);
+Route::get('/vendor/approved/product',[VendorController::class,'vendorApprovedProduct']);
 //VENDOR CONTROLLER END
 
 //VENDOR PRODUCT CONTROLLER START
@@ -48,6 +62,8 @@ Route::get('/vendor/product/manage',[VendorController::class,'vendorProductManag
 Route::get('/vendor/product/approved/{id}',[VendorController::class,'vendorProductApproved']);
 Route::get('/vendor/product/pending/{id}',[VendorController::class,'vendorProductPending']);
 Route::get('/vendor/product/drop/{id}',[VendorController::class,'vendorProductDrop']);
+Route::get('/vendor/pending/product/list',[VendorController::class,'vendorPendingProductList']);
+Route::get('/vendor/approved/product/list',[VendorController::class,'vendorApproveProductList']);
 
 //VENDOR PRODUCT CONTROLLER START
 
@@ -103,3 +119,20 @@ Route::get('/size/edit/{id}',[SizeController::class,'sizeEdit']);
 Route::post('/size/update/{id}',[SizeController::class,'sizeUpdate']);
 
 //Size Controller end
+
+//User Controller Start
+Route::get('/user/logout',[UserController::class,'userLogout']);
+Route::get('/user/manage',[UserController::class,'userManage']);
+Route::get('/user/view/{id}',[UserController::class,'userView']);
+//User Controller End
+//Order Controller Start
+Route::get('/order/manage',[OrderController::class,'orderManage']);
+//Route::get('/order/view/{id}',[OrderController::class,'orderView']);
+Route::get('/order/delete/{id}',[OrderController::class,'orderDelete']);
+Route::get('/order/view/{id}',[OrderController::class,'orderView']);
+Route::get('/order/back',[OrderController::class,'orderBack']);
+//Order Controller End
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

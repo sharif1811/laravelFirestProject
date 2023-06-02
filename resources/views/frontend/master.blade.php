@@ -6,6 +6,7 @@
 <link href='http://fonts.googleapis.com/css?family=Ubuntu+Condensed' rel='stylesheet' type='text/css'>
 <!------ start style----->
 @include('frontend.home.style')
+@stack('style')
 <!------ start style----->
 <!---start script----->
 @include('frontend.home.script')

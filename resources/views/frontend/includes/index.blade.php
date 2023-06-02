@@ -25,18 +25,18 @@
 		          	 <div class="ocarousel_slider">  
 	      				<div class="ocarousel example_photos" data-ocarousel-perscroll="3">
 			                <div class="ocarousel_window">
-			                   <a href="#" title="img1"> <img src="{{ asset('/frontend/assets/') }}/images/latest-product-img1.jpg" alt="" /><p>Nuncvitae</p></a>
-			                   <a href="#" title="img2"> <img src="{{ asset('/frontend/assets/') }}/images/latest-product-img2.jpg" alt="" /><p>Suspendiss</p></a>
-			                   <a href="#" title="img3"> <img src="{{ asset('/frontend/assets/') }}/images/latest-product-img3.jpg" alt="" /><p>Phasellus ferm</p></a>
-			                   <a href="#" title="img4"> <img src="{{ asset('/frontend/assets/') }}/images/latest-product-img4.jpg" alt="" /><p>Veldignissim</p></a>
-			                   <a href="#" title="img5"> <img src="{{ asset('/frontend/assets/') }}/images/latest-product-img5.jpg" alt="" /><p>Aliquam interd</p></a>
-			                   <a href="#" title="img6"> <img src="{{ asset('/frontend/assets/') }}/images/latest-product-img6.jpg" alt="" /><p>Sapien lectus</p></a>
-			                   <a href="#" title="img1"> <img src="{{ asset('/frontend/assets/') }}/images/latest-product-img1.jpg" alt="" /><p>Nuncvitae</p></a>
-			                   <a href="#" title="img2"> <img src="{{ asset('/frontend/assets/') }}/images/latest-product-img2.jpg" alt="" /><p>Suspendiss</p></a>
-			                   <a href="#" title="img3"> <img src="{{ asset('/frontend/assets/') }}/images/latest-product-img3.jpg" alt="" /><p>Phasellus ferm</p></a>
-			                   <a href="#" title="img4"> <img src="{{ asset('/frontend/assets/') }}/images/latest-product-img4.jpg" alt="" /><p>Veldignissim</p></a>
-			                   <a href="#" title="img5"> <img src="{{ asset('/frontend/assets/') }}/images/latest-product-img5.jpg" alt="" /><p>Aliquam interd</p></a>
-			                   <a href="#" title="img6"> <img src="{{ asset('/frontend/assets/') }}/images/latest-product-img6.jpg" alt="" /><p>Sapien lectus</p></a>
+			                   <a href="#" title="img1"> <img src="{{ asset('/frontend/assets/') }}/{{ asset('/gallery/') }}/images/latest-product-img1.jpg" alt="" /><p>Nuncvitae</p></a>
+			                   <a href="#" title="img2"> <img src="{{ asset('/frontend/assets/') }}/{{ asset('/gallery/') }}/images/latest-product-img2.jpg" alt="" /><p>Suspendiss</p></a>
+			                   <a href="#" title="img3"> <img src="{{ asset('/frontend/assets/') }}/{{ asset('/gallery/') }}/images/latest-product-img3.jpg" alt="" /><p>Phasellus ferm</p></a>
+			                   <a href="#" title="img4"> <img src="{{ asset('/frontend/assets/') }}/{{ asset('/gallery/') }}/images/latest-product-img4.jpg" alt="" /><p>Veldignissim</p></a>
+			                   <a href="#" title="img5"> <img src="{{ asset('/frontend/assets/') }}/{{ asset('/gallery/') }}/images/latest-product-img5.jpg" alt="" /><p>Aliquam interd</p></a>
+			                   <a href="#" title="img6"> <img src="{{ asset('/frontend/assets/') }}/{{ asset('/gallery/') }}/images/latest-product-img6.jpg" alt="" /><p>Sapien lectus</p></a>
+			                   <a href="#" title="img1"> <img src="{{ asset('/frontend/assets/') }}/{{ asset('/gallery/') }}/images/latest-product-img1.jpg" alt="" /><p>Nuncvitae</p></a>
+			                   <a href="#" title="img2"> <img src="{{ asset('/frontend/assets/') }}/{{ asset('/gallery/') }}/images/latest-product-img2.jpg" alt="" /><p>Suspendiss</p></a>
+			                   <a href="#" title="img3"> <img src="{{ asset('/frontend/assets/') }}/{{ asset('/gallery/') }}/images/latest-product-img3.jpg" alt="" /><p>Phasellus ferm</p></a>
+			                   <a href="#" title="img4"> <img src="{{ asset('/frontend/assets/') }}/{{ asset('/gallery/') }}/images/latest-product-img4.jpg" alt="" /><p>Veldignissim</p></a>
+			                   <a href="#" title="img5"> <img src="{{ asset('/frontend/assets/') }}/{{ asset('/gallery/') }}/images/latest-product-img5.jpg" alt="" /><p>Aliquam interd</p></a>
+			                   <a href="#" title="img6"> <img src="{{ asset('/frontend/assets/') }}/{{ asset('/gallery/') }}/images/latest-product-img6.jpg" alt="" /><p>Sapien lectus</p></a>
 			                </div>
 			               <span>           
 			                <a href="#" data-ocarousel-link="left" style="float: left;" class="prev"> </a>
@@ -69,7 +69,7 @@
 						<p>So we're committed to giving you all the tools to make the right decision with minimum fuss. </p>
 					  </div>	
 					  <div class="add-banner">
-					  	<img src="{{ asset('/frontend/assets/') }}/images/camera.png" alt="" />
+					  	<img src="{{ asset('/frontend/assets/') }}/{{ asset('/gallery/') }}/images/camera.png" alt="" />
 					  	<div class="banner-desc">
 					  		<h4>Electronics</h4>
 					  	    <a href="#">More Info</a>
@@ -77,10 +77,10 @@
 					  	<div class="clear"></div>
 					  </div>
 					    <div class="add-banner add-banner2">
-					  	<img src="{{ asset('/frontend/assets/') }}/images/computer.png" alt="" />
+					  	<img src="{{ asset('/frontend/assets/') }}/{{ asset('/gallery/') }}/images/computer.png" alt="" />
 					  	<div class="banner-desc">
 					  		<h4>Computers</h4>
-					  	    <a href="#">More Info</a>
+					  	    <a href="#">Add To Cart</a>
 					  	</div>
 					  	<div class="clear"></div>
 					  </div>
@@ -105,18 +105,32 @@
 								<div class="card-body">
 									<div class="grid_1_of_4 {{ asset('/product/'.$product->image) }}">
 									<h4 ><a class="mb-2" href="preview.html">All Products </a></h4>
-									<a href="preview.html"><img src="{{ asset('/product/'.$product->image) }}" alt="" width=150 height=100 /></a>
+									<a href="{{ url('/product/detailes/'.$product->id) }}"><img src="{{ asset('/product/'.$product->image) }}" alt="" width=150 height=100 /></a>
 									<div class="price-details">
-									<div class="price-number">
+									<form action="{{ url('/add/to/cart') }}" method="post">
+									@csrf
+										<input type="hidden" name="vendor_id" value="{{$product->vendor_id}}">
+										<input type="hidden" name="product_id" value="{{$product->id}}">
+										<input type="hidden" name="price" value="{{$product->price}}">
+										
+										<div class="price-number">
+											<a href="{{ url('/product/detailes/'.$product->id) }}"><p class="text-center" >{{ $product->name }}</p></a>
 											<p class="text-center"><span class="rupees ">$ {{$product->price}} </span></p>
 											<p class="text-center" >{{ $product->color->name }}</p>
+
 									</div>
-												<div class="add-cart">								
-													<h4><a href="preview.html">More Info</a></h4>
-										
-												</div>
+											<div class="add-cart">
+												@if(auth()->check())
+													<button type="submit" class="btn btn-block btn-primary" >Buy Now</button>
+													@else
+													<h4><a href="{{ url('/login') }}">Add To Cart</a></h4>
+												@endif								
+											
+											</div>
 											<div class="clear"></div>
 									</div>
+									</form>
+
 	
 								</div>
 								</div>
@@ -142,18 +156,29 @@
 								<div class="card-body">
 									<div class="grid_1_of_4 {{ asset('/product/'.$product->image) }}">
 									<h4 ><a class="mb-2" href="preview.html">All Products </a></h4>
-									<a href="preview.html"><img src="{{ asset('/product/'.$product->image) }}" alt="" width=150 height=100 /></a>
+									<a href="{{ url('/product/detailes/'.$product->id) }}"><img src="{{ asset('/product/'.$product->image) }}" alt="" width=150 height=100 /></a>
 									<div class="price-details">
-									<div class="price-number">
+										<form action="{{url('/add/to/cart')}}" method="post">
+											@csrf
+											<input type="hidden" name="vendor_id" value="{{$product->vendor_id}}">
+											<input type="hidden" name="product_id" value="{{$product->id}}">
+											<input type="hidden" name="price" value="{{$product->price}}">
+											<div class="price-number">
+											<a href="{{ url('/product/detailes/'.$product->id) }}"><p class="text-center" >{{ $product->name }}</p></a>
 											<p class="text-center"><span class="rupees ">$ {{$product->price}} </span></p>
 											<p class="text-center" >{{ $product->color->name }}</p>
 									</div>
-												<div class="add-cart">								
-													<h4><a href="preview.html">More Info</a></h4>
-										
-												</div>
-											<div class="clear"></div>
+									<div class="add-cart">								
+												@if(auth()->check())
+													<button type="submit" class="btn btn-block btn-primary" >Buy Now</button>
+													@else
+													<h4><a href="{{ url('/login') }}">Add To Cart</a></h4>
+												@endif	
 									</div>
+									<div class="clear"></div>
+									</form>
+
+								</div>
 	
 								</div>
 								</div>
@@ -179,17 +204,27 @@
 								<div class="card-body">
 									<div class="grid_1_of_4 {{ asset('/product/'.$product->image) }}">
 									<h4 ><a class="mb-2" href="preview.html">All Products </a></h4>
-									<a href="preview.html"><img src="{{ asset('/product/'.$product->image) }}" alt="" width=150 height=100 /></a>
+									<a href="{{ url('/product/detailes/'.$product->id) }}"><img src="{{ asset('/product/'.$product->image) }}" alt="" width=150 height=100 /></a>
 									<div class="price-details">
-									<div class="price-number">
+									<form action="{{url('/add/to/cart')}}" method="post">
+											@csrf
+											<input type="hidden" name="vendor_id" value="{{$product->vendor_id}}">
+											<input type="hidden" name="product_id" value="{{$product->id}}">
+											<input type="hidden" name="price" value="{{$product->price}}">
+											<div class="price-number">
+											<a href="{{ url('/product/detailes/'.$product->id) }}"><p class="text-center" >{{ $product->name }}</p></a>
 											<p class="text-center"><span class="rupees ">$ {{$product->price}} </span></p>
 											<p class="text-center" >{{ $product->color->name }}</p>
 									</div>
-												<div class="add-cart">								
-													<h4><a href="preview.html">More Info</a></h4>
-										
-												</div>
-											<div class="clear"></div>
+									<div class="add-cart">								
+												@if(auth()->check())
+													<button type="submit" class="btn btn-block btn-primary" >Buy Now</button>
+													@else
+													<h4><a href="{{ url('/login') }}">Add To Cart</a></h4>
+												@endif	
+									</div>
+									<div class="clear"></div>
+									</form>
 									</div>
 	
 								</div>

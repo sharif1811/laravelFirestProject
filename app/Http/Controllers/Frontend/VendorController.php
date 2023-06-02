@@ -8,6 +8,7 @@ use App\Models\Vendor;
 use App\Models\Catagory;
 use App\Models\Color;
 use App\Models\Size;
+use App\Models\Order;
 use App\Models\Product;
 use Illuminate\Support\Facades\File;
 
@@ -219,6 +220,22 @@ class VendorController extends Controller
             return redirect()->back()->with('success');
         }
 //Vendor Product Drop ENd
+
+        public function vendorOrder(){
+            $orders = Order::with('user','products','vendor')->where('vendor_id',session()->get('vendorId'))->paginate(5);
+            return view('frontend.vendor.orders',compact('orders'));
+        }
+        
+
+
+        public function vendorPendingProductList(){
+            $pendingProducts = Product::where('status',0)->where('vendor_id',session()->get('vendorId'))->paginate(5);
+            return view('frontend.vendor.pendinglist',compact('pendingProducts'));
+        }
+        public function vendorApproveProductList(){
+            $pendingProducts = Product::where('status',1)->where('vendor_id',session()->get('vendorId'))->paginate(5);
+            return view('frontend.vendor.approvedlist',compact('pendingProducts'));
+        }
 
 #<<<<<<<<<<<<<<<<<VENDOR PRODUCT END>>>>>>>>>>>>>>
 }

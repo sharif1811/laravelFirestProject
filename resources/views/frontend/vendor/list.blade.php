@@ -14,10 +14,37 @@
   </head>
   <body>
         <div class="container">
+           
             <div class="row">
                 <div class="col-lg-12">
                     <div class="card my-5">
                         <div class="card-header">
+                        <div class="row">
+             <nav class="navbar navbar-expand-lg navbar-light bg-primary">
+                    <a class="navbar-brand  text-white" href="#">Navbar</a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link text-white mx-5" href="{{ url('/vendor/order') }}">ORDER</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white mx-5" href="{{ url('/vendor/pending/product/list') }}">PENDING PRODUCT</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white mx-5" href="{{ url('/vendor/approved/product/list') }}">APPROVED PRODUCT</a>
+                        </li>
+                    </ul>
+                <form class="form-inline my-2 my-lg-0">
+                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success my-2 mx-3 mr-2 my-sm-0 text-white" type="submit">Search</button>
+                </form>
+                </div>
+                </nav>
+            </div>
                             <h4>Product List</h4>
                             <a href="{{ url('/vendor/product/create') }}" class="btn btn-sm btn-primary float-right" style="margin-top:-34px">Create Product</a>
                         </div>
